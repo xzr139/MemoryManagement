@@ -1,0 +1,13 @@
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\bin\Debug\MyMemoryManagement.exe
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\bin\Debug\MyMemoryManagement.pdb
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\ResolveAssemblyReference.cache
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MainWindow.baml
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MainWindow.g.cs
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\App.g.cs
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MyMemoryManagement_MarkupCompile.cache
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MyMemoryManagement.g.resources
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MyMemoryManagement.Properties.Resources.resources
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\GenerateResource.read.1.tlog
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\GenerateResource.write.1.tlog
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MyMemoryManagement.exe
+d:\360data\重要数据\我的文档\Visual Studio 2010\Projects\MyMemoryManagement\MyMemoryManagement\obj\x86\Debug\MyMemoryManagement.pdb

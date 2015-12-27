@@ -1,0 +1,118 @@
+﻿<Window x:Class="MyMemoryManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="沈忆珠 103013" WindowStyle="ToolWindow" MaxWidth="800" MaxHeight="600" MinWidth="800" MinHeight="600" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="600" d:DesignWidth="800" SizeToContent="WidthAndHeight"> 
+    <Grid Width="791" Height="534">
+        <DataGrid AutoGenerateColumns="False" Height="258" HorizontalAlignment="Left" Margin="38,157,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="548" ItemsSource="{Binding}" VerticalScrollBarVisibility="Auto" ColumnHeaderHeight="25" AllowDrop="False" RowHeight="25" RowDetailsVisibilityMode="VisibleWhenSelected" BorderBrush="White" OpacityMask="{x:Null}" Foreground="Black" Background="#D9FBFBFB" HorizontalScrollBarVisibility="Disabled" HeadersVisibility="All">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="序号" Binding="{Binding one, Mode=OneWay}"  Width="50"/>
+                <DataGridTextColumn Header="指令" Binding="{Binding two, Mode=OneWay}" Width="100"/>
+                <DataGridTextColumn Header="所在页" Binding="{Binding three, Mode=OneWay}" Width="100"/>
+                <DataGridTextColumn Header="缺页" Binding="{Binding four, Mode=OneWay}" Width="100"/>
+                <DataGridTextColumn Header="换出页" Binding="{Binding five, Mode=OneWay}" Width="100"/>
+                <DataGridTextColumn Header="换入页" Binding="{Binding six, Mode=OneWay}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="操作系统" Height="70" HorizontalAlignment="Left" Margin="38,37,0,0" Name="Title" VerticalAlignment="Top" Width="219" DataContext="{Binding}" FontSize="48" FontFamily="YouYuan" FontWeight="Bold" FontStyle="Normal" Foreground="#FF454545" />
+        <Label Content="————请求调页存储管理方式模拟" Height="42" HorizontalAlignment="Left" Margin="123,101,0,0" Name="SubTitle" VerticalAlignment="Top" Width="483" FontSize="24" FontStyle="Italic" Foreground="#FF5F5F5F" />
+        <Rectangle Fill="#FFE8E8E8" Height="60" HorizontalAlignment="Left" Margin="621,223,0,0" Name="Block1" Stroke="White" VerticalAlignment="Top" Width="140"/>
+        <Rectangle Fill="#FFE8E8E8" Height="60" HorizontalAlignment="Left" Margin="621,0,0,317" Name="Block2" Stroke="White" VerticalAlignment="Bottom" Width="140" />
+        <Rectangle Fill="#FFE8E8E8" Height="60" HorizontalAlignment="Left" Margin="621,289,0,0" Name="Block3" Stroke="White" VerticalAlignment="Top" Width="140" />
+        <Rectangle Fill="#FFE8E8E8" Height="60" HorizontalAlignment="Left" Margin="621,355,0,0" Name="Block4" Stroke="White" VerticalAlignment="Top" Width="140" />
+        <Button Content="自动" Height="49" HorizontalAlignment="Right" Margin="0,449,289,0" Name="Auto" VerticalAlignment="Top" Width="125" BorderBrush="White" Click="Auto_Click" FontSize="20" FontFamily="YouYuan">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFAFAFF" Offset="0" />
+                    <GradientStop Color="#93D4D4D4" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="手动" Height="49" HorizontalAlignment="Left" Margin="508,449,0,0" Name="Step" VerticalAlignment="Top" Width="125" BorderBrush="White" Click="Step_Click" FontSize="20" FontFamily="YouYuan" FontWeight="Normal" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFAFAFF" Offset="0" />
+                    <GradientStop Color="#FFD4D4D4" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="清空" Height="49" HorizontalAlignment="Left" Margin="636,449,0,0" Name="Clear" VerticalAlignment="Top" Width="125" BorderBrush="White" Click="Clear_Click" FontSize="20" FontFamily="YouYuan" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFAFAFF" Offset="0" />
+                    <GradientStop Color="#FFD4D4D4" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Height="60" HorizontalAlignment="Left" Margin="621,157,0,10" Name="Mask1" VerticalAlignment="Top" Width="140" MouseEnter="mask_MouseEnter" MouseLeave="mask_MouseLeave" FontFamily="YouYuan" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label Height="60" HorizontalAlignment="Left" Margin="621,223,0,10" Name="Mask2" VerticalAlignment="Top" Width="140" MouseLeave="mask_MouseLeave" MouseEnter="mask_MouseEnter" FontFamily="YouYuan" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Height="60" HorizontalAlignment="Left" Margin="621,289,0,10" Name="Mask3" VerticalAlignment="Top" Width="140" MouseEnter="mask_MouseEnter" MouseLeave="mask_MouseLeave" FontFamily="YouYuan" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Height="60" HorizontalAlignment="Left" Margin="621,355,0,10" Name="Mask4" VerticalAlignment="Top" Width="140" MouseLeave="mask_MouseLeave" MouseEnter="mask_MouseEnter" FontFamily="YouYuan" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox Height="49" HorizontalAlignment="Right" Margin="0,449,623,0" Name="Method" VerticalAlignment="Top" Width="130" BorderBrush="{x:Null}" Background="#FFF8F8F8" FontSize="22" FontStretch="Normal" SelectedIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="F I F O" IsEnabled="True" Padding="10,3,0,3" Visibility="Hidden" MouseLeave="Method_MouseLeave" FontFamily="YouYuan" SelectionChanged="Method_SelectionChanged">
+            <ComboBoxItem Content="FIFO" FontSize="20" IsSelected="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <ComboBoxItem Content="LRU" />
+        </ComboBox>
+        <ComboBox Height="49" HorizontalAlignment="Right" Margin="0,449,478,0" Name="Number" VerticalAlignment="Top" Width="130" BorderBrush="{x:Null}" Background="#FFF8F8F8" FontSize="22" FontStretch="Normal" SelectedIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="   FIFO" AllowDrop="False" OverridesDefaultStyle="False" Padding="10,3,0,3" MouseLeave="Number_MouseLeave" FontFamily="YouYuan" SelectionChanged="Number_SelectionChanged">
+            <ComboBoxItem Content="RAND" FontSize="20" IsSelected="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <ComboBoxItem Content="1:2:1" />
+        </ComboBox>
+        <Label Content="指令总数：320" FontSize="18" Foreground="#FF555555" Height="35" HorizontalAlignment="Left" Margin="621,27,0,0" Name="label7" VerticalAlignment="Top" Width="140" />
+        <Label Content="作业内存块：4" FontSize="18" Foreground="#FF555555" Height="35" HorizontalAlignment="Left" Margin="621,97,0,0" Name="label8" VerticalAlignment="Top" Width="140" />
+        <Label Content="每页指令：10" FontSize="18" Foreground="#FF555555" Height="35" HorizontalAlignment="Right" Margin="0,62,30,0" Name="label9" VerticalAlignment="Top" Width="140" />
+        <Label AllowDrop="False" Background="#FFF8F8F8" BorderBrush="{x:Null}" Content="RAND" FontSize="22" FontStretch="Normal" Height="49" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="183,449,0,0" Name="label1" OverridesDefaultStyle="False" Padding="0,3,7,3" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" MouseEnter="label1_MouseEnter" FontFamily="YouYuan" />
+        <Label AllowDrop="False" Background="#FFF8F8F8" BorderBrush="{x:Null}" Content="FIFO" FontSize="22" FontStretch="Normal" Height="49" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="38,449,0,0" Name="label2" OverridesDefaultStyle="False" Padding="0,3,7,3" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" MouseEnter="label2_MouseEnter" FontFamily="YouYuan"/>
+    </Grid>
+
+    <Window.Resources>
+        <!--Style TargetType="Label">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" Value="LightBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style-->
+        <Style TargetType="DataGrid">
+            <Setter Property="RowBackground">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFFCFC" Offset="0.384" />
+                        <GradientStop Color="#FFE5E5E5" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="HorizontalGridLinesBrush">
+                <Setter.Value>
+                    <SolidColorBrush Color="LightBlue"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalGridLinesBrush">
+                <Setter.Value>
+                    <SolidColorBrush Color="LightBlue"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="LightBlue"/>
+        </Style>
+        <Style TargetType="DataGridRow">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">      
+                    <Setter Property="Foreground" Value="SkyBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Style.Triggers >
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFFFCFC" Offset="0.384" />
+                                <GradientStop Color="#FFB3DBE2" Offset="1" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="BorderBrush" Value="LightBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+</Window>
